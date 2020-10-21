@@ -59,7 +59,10 @@ def decrypt_image():
 
         imageStream = io.BytesIO(plain_data)
         imageFile = PIL.Image.open(imageStream)
-        imageFile.save((file_name[:-8])+".jpg")
+        if('.jpg' in file_name):
+            imageFile.save((file_name[:-8])+".JPG")
+        elif('.JPG' in file_name):
+            imageFile.save((file_name[:-8])+".jpg")
 
 
 
