@@ -1,7 +1,7 @@
 #Importing Stuff
 from Crypto.Cipher import AES
 import io
-import PIL.Image
+import pil.Image
 from tkinter import *
 import os
 
@@ -81,7 +81,7 @@ def decrypt_image():
                 plain_data = (cfb_decipher.decrypt(enc_data2))
 
                 imageStream = io.BytesIO(plain_data)
-                imageFile = PIL.Image.open(imageStream)
+                imageFile = pil.Image.open(imageStream)
                 file_str=file.lower()
                 if(".jpg" in file_str):
                     imageFile.save(((os.path.join(cwd,file))[:-8])+".JPG")
